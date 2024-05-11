@@ -1,0 +1,24 @@
+{% extends 'blog/base.html' %}
+
+{% load static %}
+{% block content %}
+
+<div class="register-course-cont">
+    <h2>Register for Course: {{ course.name }}</h2>
+
+
+<p>
+    Before registering for our course, it's essential to ensure that it aligns with your learning goals and aspirations. Our course is meticulously designed to cover comprehensive content relevant to your field, providing practical exercises and real-world applications to enhance your skills and knowledge. By carefully reviewing the syllabus and course structure, you can confirm that our offering meets your expectations and will contribute significantly to your professional development.
+
+Furthermore, registering for our course offers you the opportunity to learn from industry experts and benefit from our institution's sterling reputation for delivering high-quality education. Our experienced instructors and robust support systems ensure that you receive guidance and assistance every step of the way. You can rest assured that by choosing our course, you're investing in an educational experience that's backed by credibility, expertise, and a commitment to excellence.
+
+Lastly, consider the value proposition of registering for our course. While it's important to evaluate the investment of time, effort, and finances required, remember that the benefits extend far beyond the classroom. With our course, you'll not only gain valuable knowledge and skills but also access certifications, mentorship opportunities, and a vibrant community of learners. The comprehensive support and resources provided ensure that your investment yields significant returns, making registering for our course a decision you won't regret.
+
+</p>
+<p>Are you sure you want to register for this course?</p>
+    <form method="post"  >
+        {% csrf_token %}
+        <button type="submit" class="register-btn">Register</button>
+    </form>
+</div>
+{% endblock %}

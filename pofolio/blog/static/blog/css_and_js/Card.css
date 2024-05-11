@@ -1,0 +1,112 @@
+*{
+  margin:0;
+  padding: 0;
+  list-style:none;
+  text-decoration:none;
+}
+
+/* Font */
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+
+/* Design */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #ecf9ff;
+}
+
+
+.main{
+  max-width: 100vw;
+  margin: 0 auto;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+}
+
+img {
+  height: auto;
+  width: 100%;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.btn {
+  color: #ffffff;
+  padding: 0.8rem;
+  font-size: 14px;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: 400;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  color:blue;
+
+
+}
+
+  .btn:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+
+.cards {
+  display: flex;
+  grid-template-columns:repeat(auto-fit,minmax(370px,1fr));
+
+
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cards_item {
+  padding: 1rem;
+ gap:15px;
+  background:rgb(37, 150, 190);
+  box-shadow:-10px 10px 10px rgba(0,0,0,0.3);
+ border-radius:10px;
+ border: solid thick white;
+
+}
+
+
+
+.card_title {
+  color: blue;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 0px;
+
+}
+
+.card_text {
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  font-weight: 400;
+}
+.made_by{
+  font-weight: 400;
+  font-size: 13px;
+  margin-top: 35px;
+  text-align: center;
+}
+
+
+
+  .card_content {
+  padding: 1rem;
+  background: linear-gradient(to bottom left, #EF8D9C 40%, #FFC39E 100%);
+}

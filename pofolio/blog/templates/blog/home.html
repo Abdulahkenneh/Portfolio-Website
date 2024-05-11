@@ -1,0 +1,40 @@
+{% extends 'blog/base.html' %}
+
+{% load static %}
+{% block content %}
+
+   <div class="container-fluid">
+     
+     <div class='row' >
+        <div class="home-side col col-sm-12 col-xs-12 col-md-3 col-xxs-12 col-lg-3" style='margin-top:100px'>
+            {% if search_results %}
+
+           <h3>Search Results for "{{ search_value}}"</h3>
+            <ul> 
+                
+                {% for topic in search_results %}
+                <p style="margin-left:12px">{{topic.course}}</p>
+                <li class='topics-link'><a href="{% url 'blog:topic_detail' topic.id %}">{{topic.text}}</a></li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p style='text-align:center;font-weight:bold'>What do you want to learn today ?</p>
+            {% for alltopic in topics %}
+            <a href="{% url 'blog:topic_detail' alltopic.id %}" class='btn btn-primary mt-2'>{{alltopic.text}}</a>
+            {% endfor %}
+             {% endif %}
+     </div>
+
+        <div class='home-main   col col-sm-12 col-md-8 col-lg-8 col-sm-12 ' style='margin-top:100px'>
+          
+            <h1 class='home-heading'>Want to code ?</h1>
+            <p class='home-paragraph'>Yes, our website is indeed a programming-focused platform. By registering, you’ll gain access to a wealth of resources, including tutorials, code samples, and a vibrant community of fellow developers. 🚀💻</p>
+        </div>
+
+        
+    </div>
+    
+</div>
+
+
+{% endblock %}

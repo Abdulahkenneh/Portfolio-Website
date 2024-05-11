@@ -1,0 +1,32 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container pofolio mt-5">
+    <div class="pofolio-containter col col-sm-12 col-xs-12 col-md-8">
+        <h1>Hello, I'm Abdulah Mamadee Kenneh</h1>
+        <h3>Who am I ?</h3>
+        <p>I am a seasoned Data Analyst certified with years of experience. I thrive on unraveling insights from complex datasets, driven by my passion for transforming raw data into valuable insights.</p>
+        <div class="bottons">
+            <a href="mailto:abulayeekennedy@gmail.com" class='botton1'>Hire me</a>
+            <a href="tel:+4917669258588" class='botton2'>Let's talk </a>
+        </div>
+    </div>
+    <div class="pofolio-img-cont col-sm-12 col-xs-12 col-md-4">
+        <img src="{% static 'blog/images/abdul.png' %}" alt="Profile pic" class=""  >
+
+
+   </div>
+</div>
+
+<div class="social-medias">
+    <a href="{{ links.linkdin }}" target="_blank"><button><img src="{% static 'blog/images/linkdin.png' %}" alt="youtube" class="social"  ></button></a>
+    <a href="{{ links.facebook }}" target="_blank"><button><img src="{% static 'blog/images/facebok.png' %}" alt="facebook" class="social"  ></button></a>
+    <a href="{{ links.whatsapp }}" target="_blank"><button><img src="{% static 'blog/images/whatsapp.png' %}" alt="whatsapp" class="social"  ></button></a>
+
+    {% comment %} <a href="{{ links.google }}" target="_blank"><button><img src="{% static 'blog/images/youtube.png' %}" alt="youtube" class="social"  ></button></a> {% endcomment %}
+     {% comment %} <img src="{% static 'blog/images/youtube.png' %}" alt="youtube" class="social"  >
+     <img src="{% static 'blog/images/whatsapp.png' %}" alt="whatsapp" class="social"  > {% endcomment %}
+
+</div>
+
+{% endblock %}

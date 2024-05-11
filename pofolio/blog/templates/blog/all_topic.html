@@ -1,0 +1,36 @@
+{% extends 'blog/base.html' %}
+
+{% load static %}
+{% block content %}
+
+
+<ul class='card-list-cont' style='display:flex;width:100vw; height:auto;flex-wrap: wrap; justify-content:center'>
+   
+    {% for course in courses %}
+
+
+
+
+<li>
+<div class="card-container container mt-5" >
+    <div class="card-items">
+        <h1 style='margin:20px'><a href="{% url 'blog:course_detail' course.id %}" >{{course}}</a></h1>
+        <img src="{{ course.image.url }}" alt="{{course}}" class="card-image" style='margin:1rem;' >
+
+         <p>
+         {{course.discritption}}
+
+        </p>
+        <a class='button' href="{% url 'blog:register_course' course.id %}">Register</a>
+     </div>
+    </div>
+</li>
+
+
+{% endfor %}
+</ul>
+
+
+
+    </div>
+{% endblock %}

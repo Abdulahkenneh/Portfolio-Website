@@ -1,0 +1,62 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+
+<div class="blog-coxntinue container ">
+    <div class='row'>
+        <div class="blog-left-side col col-sm-12 col-xs-12 col-md-4 mb-5">
+            <div class="topic-cont">
+                <h2> Table of Contents</h2>
+                {% for mytopic in topics %}
+                <li>
+                    <a href="{% url 'blog:topic_detail' mytopic.id %}">{{mytopic.text}}</a></li>
+                {% endfor %} 
+            </div>
+        </div>
+
+                <div class="blog-main col col-sm-12 col-md-8 col-xs-12 col-12">
+                    <div class="post-head-continue2">
+
+                        <h1>{{topic.course}}</h1>
+                        <div>
+                           <p class="date">{{user.username}}, posted on {{topic.date_of_entry|date:'M d, Y H:i'}}</p>
+                        </div>
+
+                    </div>
+                    <hr>
+                    {% if topic.content == 'True' %}
+                    {% else %}           
+                    
+                        <div class="paragraph">
+                            <p>{{topic.content|safe}}</p>
+                        </div>
+                    
+                    {% endif %}
+
+
+                    {% if mytopic.code %}
+                    <pre>
+                        <code class="python" id="code-block">
+                    {{topic.code|safe}}
+                    </code>
+                    </pre>
+                    {% endif %}
+
+                    {% if topic.image == 'True' %}
+
+                    {% elif not topic.image %}
+                    {% else %}
+                    <div class='code-image'>             
+                        <img src="{{ topic.image.url }}">
+                    </div>
+                    {% endif %}
+
+
+
+                </div>
+    </div>
+
+</div>
+
+    {% endblock %}

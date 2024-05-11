@@ -1,0 +1,743 @@
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Maven+Pro:wght@400..900&family=Rakkas&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, black,#007aff);
+    background-image: url("/static/blog/images/background.jpg");
+
+
+  }
+
+
+
+  .gradient-background {
+    background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+  }
+.myfooter{
+grid-area:footer;
+background: linear-gradient(300deg, #00bfff, #ff4c68, #ef8172);
+
+bottom:0px;
+margin-bottom:-20px;
+margin-top:20px;
+
+}
+
+
+
+.footer-items{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.activities{
+    display: flex;
+    flex-direction: column;
+    margin:1rem;
+}
+
+.activities a{
+    color:white;
+    margin:10px;
+    text-decoration: none;
+}
+/* grid container for the home page*/
+.grid-continue{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "header header header header "
+    "main  main main main"
+    "footer footer footer footer"
+   }
+
+
+
+  .mynavbar {
+   grid-area:header;
+    background-color:#007aff;
+    overflow: hidden;
+    margin-right:100px;
+    max-height: 60px;
+    transition: max-height 0.4s;
+    border-radius: 10px;
+    position: fixed;
+    top:10;
+
+  }
+
+ main{
+ grid-area:main;
+ margin-bottom:50px;
+ }
+
+.logoo{
+ width:200px;
+ height:200px;
+}
+  .logo{
+
+    margin:15px;
+    color:rgb(64, 211, 199);
+    text-shadow: 2px 7px 5px rgba(173, 169, 169, 0.3),
+    0px -4px 10px rgba(153, 189, 199, 0.71);
+  }
+  .mynavbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+
+  }
+  .mynavbar a:hover {
+    background-color: #ddd;
+    color: #333;
+    transition: all 2s;
+  }
+
+  .ham{
+    margin:1rem;
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    display: none;
+    border-radius:10px;
+    position: fixed;
+
+
+  }
+  .mynavbar .icon {
+    display: block;
+
+  }
+
+  .mycontainer{
+    display: flex;
+    justify-content: space-between;
+  }
+ 
+
+
+  @media screen and (max-width: 600px) {
+     .grid-continue{
+            display:grid;
+            grid-template-columns:1fr;
+            grid-template-areas:
+            " header "
+            " main"
+            " footer"
+            }
+
+    .logo{
+
+        text-align: center;
+        font-size: 1.5rem;
+        color:white;
+        padding-top: 1.5rem;
+        text-decoration: underline;
+    }
+
+    
+  }
+
+
+
+
+  /* This is the styling for the card*/
+
+  
+
+  .card-container{
+    grid-area:card;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    
+  }
+ 
+  .card-container h2{
+    color:white;
+    background-color:blue;
+    text-align: center;
+    margin:1rem;
+    padding:.5rem;
+    font-size: 1.5rem;
+
+  }
+
+  .card-container img{
+    width: 300px;
+    height: 100px;
+  }
+
+  .card-items{
+    margin:5px;
+    background-color: red;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  }
+  
+  .card-items:hover{
+    transition: all 2s; ;
+  }
+  .card-container p{
+    width: 300px;
+    height: 100px;
+    color:black;
+    background-color:white;
+    text-align: center;
+    margin:1rem;
+    padding:.5rem;
+
+  }
+
+  .card-container p:hover{
+    background: black;
+    color:white;
+    box-shadow: rgb(85, 91, 255)  }
+  .card-container button{
+    color:white;
+    background-color: blue;
+    text-align: center;
+    margin:1rem;
+    padding:.5rem;
+
+  }
+
+
+
+
+
+  
+
+
+  .mynavbar {
+    background-color:#007aff;
+    overflow: hidden;
+    margin-right:100px;
+    max-height: 60px;
+    transition: max-height 0.4s;
+    border-radius: 10px;
+    position: fixed;
+    top:10;
+    z-index:2;
+  }
+
+.myinput{
+float:left;
+margin-top:2rem;
+}
+
+
+  .logo{
+    margin:15px;
+    color:rgb(64, 211, 199);
+    text-shadow: 2px 7px 5px rgba(173, 169, 169, 0.3), 
+    0px -4px 10px rgba(153, 189, 199, 0.71);
+  }
+  .navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    
+  }
+  .navbar a:hover {
+    background-color: #ddd;
+    color: #333;
+    transition: all 2s;
+  }
+
+  .ham{
+    margin:1rem;
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    display: none;
+    border-radius:10px;
+    position: fixed;
+    
+  
+  }
+  .mynavbar .icon {
+    display: block;
+    
+  }
+
+  .mycontainer{
+    display: flex;
+    justify-content: space-between;
+  }
+  @media screen and (max-width: 600px) {
+    .navbar a:not(:first-child) {
+      display: none;
+    }
+    .navbar a.icon {
+      float: right;
+      display: block;
+   
+    }
+    .mycontainer{
+        display:block
+    }
+    .ham{
+        position: absolute;
+        display: block;
+        top:0;
+        right:0
+
+    
+      }
+  }
+  @media screen and (max-width: 715px) {
+    .container{
+      
+        display:block;
+        transition:all 1s;
+        background-color: blue;
+       
+    }
+    .logo{
+      position: sticky;
+      color:white;
+      top:0;
+    }
+   
+   
+  }
+  @media screen and (max-width: 600px) {
+    .logo{
+        position: fixed;
+        text-align: center;
+        font-size: 1.5rem;
+        color:white;
+        padding-top: 1.8rem;
+        text-decoration: underline;
+        top:0;
+        
+    }
+    .mynavbar.responsive {
+      min-width:50%;
+      position: absolute;
+      max-height: 300px;
+      
+    }
+    .mynavbar.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    
+    }
+    .mynavbar.responsive a{
+      float:none;
+      display: block;
+      text-align: left;
+    
+    }
+    .mycontainer{
+      height: 15vh;
+      display:block;
+      transition:all 1s;
+      background-color: #007aff;
+      position: sticky;
+      top:0;
+      
+     
+  }
+  }
+
+
+
+
+  /* This is the style for the carld*/
+
+
+  .card-container{
+    display:flex;
+    flex-wrap: wrap;
+    border-radius:10px;
+
+    
+  }
+ 
+  .card-container h2{
+    color:white;
+    background-color:blue;
+    text-align: center;
+    margin:1rem;
+    padding:.5rem;
+    font-size: 1.5rem;
+
+  }
+
+
+  .card-container img{
+    width: 350px;
+    height: 150px;
+  }
+
+  .card-items{
+    margin:10px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  }
+  
+  .card-items:hover{
+    transition: all 2s;
+   
+  }
+  .card-container p{
+    width: 350px;
+    color:balck;
+    text-align: center;
+    margin:1rem;
+    padding:.5rem;
+    border-radius: 10px;
+    
+
+  }
+
+  .card-container p:hover{
+    background: black;
+    color:white;
+     }
+
+     .button{
+      color:white;
+      width: 150px;
+      border-radius: 15px;
+      background-color: blue;
+      text-align: center;
+      margin:1rem;
+      padding:.5rem;
+     }
+  .card-container .button{
+    color:white;
+    width: 150px;
+    height: 50px;
+    background-color: blue;
+    text-align: center;
+    margin:1rem;
+    padding:.5rem;
+
+  }
+
+
+
+
+
+
+  .home-main{
+    margin:15% 20px 20px 20px;
+    flex-grow: 1;
+    height: 50vh;
+    justify-content: center;
+    justify-items: center;
+     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+     rgba(0, 0, 0, 0.12) 0px -12px 30px,
+     rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px,
+       rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+   
+   
+  }
+  
+  .home-side{
+   border-radius:10px;
+    color:black;
+    background-color: white;
+    z-index:0;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
+
+  }
+
+  .home-side h3{
+    color:black;
+    background-color: white;
+    padding:10px;
+    border-radius:10px;
+
+
+  }
+
+  .home-main h1{
+    color:white;
+    padding:1rem;
+    margin:1rem;
+    font-family: "Rakkas", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size:3rem;
+
+
+  }
+  
+  .home-main p{
+    color:white;
+    padding:1rem;
+    margin:1rem;
+  }
+  
+
+  .home-image{
+    height:50vh;
+    width:100%
+  }
+  
+  .home-button{
+    color:white;
+    background-color: blue;
+  }
+
+   @media screen and (max-width: 780px) {
+
+    
+    .home-main{
+      margin: 20px 0px 20px 0px;
+      width: auto;
+      height: auto;
+
+    }
+  }
+    /* @media screen and (max-width: 780px) {
+      .form-container{
+        width:100%;
+        background-color: yellow;
+      }
+  
+    
+  }  */
+
+.topics-link a{
+   color:blue;
+   padding:10px;
+   margin:10px;
+
+
+}
+
+.topics-link {
+  margin:10px;
+  list-style:lower-roman;
+}
+
+
+.topics-link:hover {
+  background-color: #333;
+  color:white;
+  transition:all 2s
+}
+
+.topics-link a:hover { 
+  color:white
+}
+
+
+/* this is the style of the forms*/
+.form-container{
+  display: block;
+  flex-direction:column;
+  width:450px;
+  border-radius: 10px;
+  background-color:white;
+  position: relative;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%) ;
+  margin-top:10%;
+ 
+
+}
+.form-heading{
+  color: Red;
+  margin:20px;
+  text-align:center;
+
+}
+.inpuct,.seclect{
+  height: 30px;
+  margin:0px 20px;
+  background-color: transparent;
+  border-bottom: solid thin black;
+
+}
+
+.formm-btn{
+  background: linear-gradient(to right, black,#007aff);
+  float: right;
+  height:30px;
+  width:40%;
+  margin: 40px 20px;
+  border-radius:20px;
+  color:white;
+
+
+
+}
+.textarea{
+}
+
+myform{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap:10px;
+
+}
+
+
+
+/* All topics styling */
+
+.courses-cont{
+width:100%;
+list-style:none;
+text-dalign:center;
+}
+
+
+.courses{
+ display:flex;
+}
+
+.courses-cont li{
+margin: 2rem 10px;
+color: White;
+
+}
+.course-heading{
+text-align:center;
+color:black;
+background:white;
+height:20%;
+margin:20px;
+padding:20px;
+
+
+}
+
+
+.courses-cont li:hover {
+background:white;
+width:25%;
+transition:all 2s;
+color:black;
+}
+
+.courses-cont li a{
+font-size:1.5rem;
+}
+
+
+
+
+/* register course styling */
+
+
+.register-course-cont{
+margin:2rem;
+}
+
+.register-course-cont p{
+margin:10px;
+padding:10px;
+color:white;
+}
+
+
+.register-course-cont h2{
+margin:10px;
+padding:10px;
+color:white;
+}
+
+.register-btn{
+background:#007aff;
+width:258px;
+margin:10px;
+height:30px;
+}
+
+.register-btn-cont{
+  display: flex;
+}
+
+
+
+
+/*This is the profile styling */
+
+.profile-cont{
+background:white;
+
+}
+
+.profile-cont li{
+color: black;
+}
+
+.profile-heading{
+margin-top:2rem;
+color: white;
+}
+
+
+
+/* This is the styling for the form  */
+
+.form{
+  display:block;
+  justify-content: center;
+  background-color: blue;
+}
+
+/* This the style of the code-image */
+.code-image img{
+  width:100%;
+  height:400px;
+  border-radius: 10px;
+}
+
+/* This is the profile button styling */
+
+.profile{
+  display: flex;
+  align-self: start;
+  position: sticky;
+  top:0;
+  margin-top:2rem;
+  width:150px;
+  justify-content: center;
+  background-color: white;
+  border-radius: 15px;
+}
+
+.profile a{
+  float: right;
+  padding:10px;
+  color: Red;
+  text-align:center;
+}
+
+.profile:hover{
+  background-color:yellow;
+  
+}
+
+.profile-picture {
+  max-width: 200px;
+  height: auto;
+  border-radius: 50%;
+}
