@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'blog',
     'widget_tweaks',
      'django_quill',
-     'tinymce'
+     'tinymce',
+
 ]
 
 MIDDLEWARE = [
