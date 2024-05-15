@@ -29,8 +29,8 @@ SECRET_KEY = 'django-insecure-i2z)xe&w9ru4)g6o57oofj!coydtenx03rh#y%c(*sxvt0=zga
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['code-with-abdulah.herokuapp.com']
-
+#ALLOWED_HOSTS = ['code-with-abdulah.herokuapp.com']
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -101,29 +101,29 @@ WSGI_APPLICATION = 'pofolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'depkhgstqh09pq',
-        'USER': 'u7rai99g20ad79',
-        'PASSWORD': 'p47f674aee9fa5b7d98380ef7d2c0e69156bfce9ed02b716bb170eb8b78b3ce07',
-        'HOST':'c7u1tn6bvvsodf.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com',
-        'PORT':'p47f674aee9fa5b7d98380ef7d2c0e69156bfce9ed02b716bb170eb8b78b3ce07'
-        
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'depkhgstqh09pq',
+#         'USER': 'u7rai99g20ad79',
+#         'PASSWORD': 'p47f674aee9fa5b7d98380ef7d2c0e69156bfce9ed02b716bb170eb8b78b3ce07',
+#         'HOST':'c7u1tn6bvvsodf.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com',
+#         'PORT':'5432'
+        
+#     }
+# }
 
 
 
 STATCI_ROOT = os.path.join(BASE_DIR,'staticfiles')
-#STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
+STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
 django_heroku.settings(locals())
 
 # Password validation
