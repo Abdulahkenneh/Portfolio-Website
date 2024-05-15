@@ -1,0 +1,101 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5 w-60 "  >
+    <div class="row justify-content-center col-12"  >
+        <div class="col-md-8">
+            <div class="card" style="width: 100%;">
+                <div class="card-header">
+                    <h1 class="mb-0">Profile</h1>
+                </div>
+                <div class="card-body text-center"  >
+                    {% if request.user.profile_pic %}
+                        <img  src="{{ request.user.profile_pic.url }}" alt="Profile Picture" class="profile-picture" style="width: 100px; height:100px " >
+                    
+                    {% else %}
+                        <p class="text-muted">No profile picture available.</p>
+                    {% endif %}
+                    <p class="mt-3">Username: {{ request.user.username }}</p>
+                    <p>First Name: {{ request.user.firstname }}</p>
+                    <p>Last Name: {{ request.user.lastname }}</p>
+                    <h3>Upload Profile Picture</h3>
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit"  class='btn btn-success'>Upload</button>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr style='background:white;height:25px'>
+{% if mycourses %}
+<h1 class="profile-heading">Registered courses </h1>
+{% else %}
+<h1 class="profile-heading"> You have not Registered for any course yet </h1>
+<p style='color:white'>Take a look at these courses: <a class='button' href="{% url 'blog:topics' %}">click me</a></p>
+{% endif %}
+<ul class='card-list-cont container' style='display:flex;width:100vw; height:auto;flex-wrap: wrap; justify-content:center'>
+
+    {% for course in mycourses %}
+<li >
+
+<div class="card-container" >
+    <div class="card-items">
+        <h1 style='margin:20px'><a href="{% url 'blog:course_detail' course.id %}" >{{course}}</a></h1>
+        <img src="{{ course.image.url }}" alt="{{course}}" class="card-image" style='margin:1rem;' >
+
+         <p>
+         {{course.discritption}}
+
+        </p>
+        <a class='button' href="{% url 'blog:course_detail' course.id %}">Read Me</a>
+        <a class='button' href="{% url 'blog:confirm' course.id %}" style='float:right'>Unregister</a>
+     </div>
+    </div></li>
+
+
+
+{% endfor %}
+</ul>
+
+
+{% comment %} !-- <div class="card-container">
+    <div class="card-items">
+         <h2>Python</h2>
+         <img src="{% static 'blog/images/download.jpeg' %}" alt="Python" class="card-image"  >
+
+         <p> Are you ready to master Python? Learn the most versatile and powerful programming language that serves as a foundation for various applications.
+
+         <button>Read Me</button></p>
+     </div>
+   <div class="card-items">
+        <h2>Matplotlib</h2>
+        <img src="{% static 'blog/images/mat.png' %}" alt="Matplotlib" class="card-image"  >
+        <p>Enhance your data visualization skills with Matplotlib. Create visually stunning and informative plots and graphs to effectively communicate your data.
+        <button>Read Me</button></p>
+
+    </div>
+ 
+    <div class="card-items">
+           <h2>Pandas</h2>
+
+           <img src="{% static 'blog/images/pandas_logo.png' %}" alt="Pandas" class="card-image"  >
+           <p>  Discover the power of Pandas, a Python library essential for efficient data manipulation and analysis. Unlock the potential of large datasets and maximize your data processing capabilities.
+          <button>Read Me</button></p>
+    </div>
+</div>
+</div> --> {% endcomment %}
+
+
+
+
+
+
+
+
+{% endblock %}

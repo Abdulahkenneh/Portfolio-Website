@@ -1,0 +1,63 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+
+<div class="blog-corntinue container-fluid">
+    <div class='row'>
+<div class="blog-left-side col col-sm-12 col-md-3 col-xs-12 col-3">
+   <div class="topic-cont">
+    <h2> Table of Contents</h2>
+       {% for topic in topics %}
+        {{topic.course}} --
+    <li>
+        <a href="{% url 'blog:topic_detail' topic.id %}">{{topic.text}}</a></li>
+       {% endfor %}
+   </div>
+        </div>
+
+        <div  class="blog-main col col-sm-12 col-md-6 col-xs-12 col-6">
+            {% for blog_post in blogs|slice:':1' %}
+            <div class="post-head-continue2">
+
+                <h1>{{post.topic}}</h1>
+                <div>
+                    <img  src="{{ post.user.profile_pic.url }}" alt="Profile Picture" class="profile-pictur" style="width: 50px; height:50px ;border-radius:50%" >       <p class="date">{{user.username}}, posted on {{mytopic.date_of_entry|date:'M d, Y H:i'}}</p>
+                    <p class="date">{{user.username}}, posted on {{post.post_date|date:'M d, Y H:i'}}</p>
+                </div>
+
+            </div>
+            <hr>
+            <div class="paragraph">
+             <p  >{{post.content|safe}}</p>
+            </div>
+
+             {% if post.code %}
+            <pre>
+                <code class="python" >
+            {{post.code|safe}}
+            </code>
+            </pre>
+            {% endif %}
+         <div class="divisor">
+            </div>
+
+ {% endfor %}
+  </div>
+
+        <div class="blog-right-side col col-sm-12 col-md-3 col-xs-12 col-3">
+            <div class="topic-cont">
+                <h2> Recent Posts </h2>
+
+                
+            {% for blog_post in blogs %}
+               <li>
+             <a href="{% url 'blog:blogpost_detail' blog_post.id %}">{{blog_post.topic}}</a></li>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+

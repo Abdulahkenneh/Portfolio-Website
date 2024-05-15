@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 import requests 
-
 from pathlib import Path
 import os
 import dj_database_url
@@ -29,7 +28,8 @@ SECRET_KEY = 'django-insecure-i2z)xe&w9ru4)g6o57oofj!coydtenx03rh#y%c(*sxvt0=zga
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
+ALLOWED_HOSTS = ['code-with-abdulah.herokuapp.com']
 
 
 # Application definition
@@ -48,22 +48,22 @@ INSTALLED_APPS = [
 
 ]
 
-# Heroku settings
-if os.getcwd() == '/app':
-    import dj_database_url
-    DATABASES = {
-        'default': dj_database_url.config(default='postgres://localhost')
-    }
-    # Honor the 'X-Forwarded-Proto' header for request.is_secure().
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-    # Allow all host headers.
-    ALLOWED_HOSTS = ['*']
-    # Static asset configuration
-    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-    STATIC_ROOT = 'staticfiles'
-    STATICFILES_DIRS = (
-        os.path.join(BASE_DIR, 'static'),
-    )
+# # Heroku settings
+# if os.getcwd() == '/app':
+#     import dj_database_url
+#     DATABASES = {
+#         'default': dj_database_url.config(default='postgres://localhost')
+#     }
+#     # Honor the 'X-Forwarded-Proto' header for request.is_secure().
+#     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+#     # Allow all host headers.
+#     ALLOWED_HOSTS = ['*']
+#     # Static asset configuration
+#     BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+#     STATIC_ROOT = 'staticfiles'
+#     STATICFILES_DIRS = (
+#         os.path.join(BASE_DIR, 'static'),
+#     )
 
 
 
@@ -101,18 +101,29 @@ WSGI_APPLICATION = 'pofolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'depkhgstqh09pq',
+        'USER': 'u7rai99g20ad79',
+        'PASSWORD': 'p47f674aee9fa5b7d98380ef7d2c0e69156bfce9ed02b716bb170eb8b78b3ce07',
+        'HOST':'c7u1tn6bvvsodf.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com',
+        'PORT':'p47f674aee9fa5b7d98380ef7d2c0e69156bfce9ed02b716bb170eb8b78b3ce07'
+        
     }
 }
 
 
 
-
 STATCI_ROOT = os.path.join(BASE_DIR,'staticfiles')
-STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
+#STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
 django_heroku.settings(locals())
 
 # Password validation

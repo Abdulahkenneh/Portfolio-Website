@@ -1,0 +1,83 @@
+
+
+
+
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+{% for p in  course_progress_dict %}
+
+{{p}}
+{{user_topics}}
+{% endfor %}
+<div class="blodg-continue container">
+    <div class='row'>
+<div class="blog-left-side col col-sm-12 col-xs-12 col-md-4 mb-5">
+   <div class="topic-cont">
+   
+    
+    <h2> Table of Contents </h2>
+    {{mycourse}} 
+       {% for mytopic in topics %}
+    <li>
+        
+        <a href="{% url 'blog:mytopic_detail' mytopic.id %}">{{mytopic.text}}</a></li>
+        {% endfor %}
+   </div>
+        </div>
+
+
+        <div class="blog-main col col-sm-12 col-md-8 col-xs-12 col-12">
+            {% for mytopic in topics %}
+            <div class="post-head-continue2">
+                <h1>{{mytopic.course}}</h1>
+                <h3 style='text-align:center;text-decoration:underline;color:#007aff'>{{mytopic.text}}</h3>
+                <div>
+            
+                    <p class="date">{{user.username}}, posted on {{mytopic.date_of_entry|date:'M d, Y H:i'}}</p>
+                </div>
+
+            </div>
+            <hr>
+            {% if  mytopic.content == "True" %}
+
+            {% else %}
+
+             <div class="paragraph">
+                <p>{{mytopic.content|safe}}</p>
+                </div>
+
+
+
+             {% endif %}
+
+             {% if mytopic.code %}
+             <pre>
+                 <code class="python" id="code-block">
+             {{mytopic.code|safe}}
+             </code>
+             </pre>
+             {% endif %}
+
+            
+
+             {% if mytopic.image == 'True' %}
+             {% elif not mytopic.image %}
+             {% else %}
+             <div class='code-image'>             
+                <img src="{{ mytopic.image.url }}">
+             </div>
+             {% endif %}
+             {% endfor %}
+  </div>
+
+    </div>
+</div>
+
+
+{% endblock %}
+
+
+
+

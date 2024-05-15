@@ -1,0 +1,58 @@
+{% extends 'blog/base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+
+
+    <div class="container-fluid justify-content-center  d-flex  " >
+        <form  class='col col-8 outline-light bg-light justify-content-center  w-80 mx-auto mt-5' action='{% url 'blog:topic' %}' method="post" enctype="multipart/form-data">
+        
+            {% csrf_token %}
+            {% if form.errors %}
+                    <div class="alert alert-danger" role="alert">
+                        <strong>Error:</strong> Please correct the following errors.
+                        <ul>
+                            {% for field, error_list in form.errors.items %}
+                                {% for error in error_list %}
+                                    <li>{{ field|title }}: {{ error }}</li>
+                                {% endfor %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+            <fieldset class='row m-5'>
+                <h2 class="form-heading">Create Topic</h2>
+                <div class="mb-3">
+                    <label  class="form-label">course</label>
+                    {% render_field form.course class="form-control form-control-lg"   placeholder=" Title of post "  aria-label=".form-control-lg example"%}
+                   
+                  </div>
+              <div class="mb-3">
+                <label  class="form-label">topic</label>
+                {% render_field form.text class="form-control form-control-lg"   placeholder=" Title of post "  aria-label=".form-control-lg example"%}
+               
+              </div>
+        
+              <div class="mb-3">
+                <label for="disabledSelect" class="form-label">content</label>
+                {% render_field form.content class="form-control form-control-lg"   placeholder=" Enter topic content"  aria-label=".form-control-lg example"%}
+                
+                
+              </div>
+              
+              <div class="mb-3">
+                <label for="disabledSelect" class="form-label">image</label>
+                {% render_field form.image  class="form-control form-control-lg"   placeholder=" browse image "  aria-label=".form-control-lg example"%}
+              </div>
+              
+              <div class="mb-3">
+                <label for="disabledSelect" class="form-label">code</label>
+                {% render_field form.code class="form-control form-control-lg"   placeholder=" Enter code "  aria-label=".form-control-lg example"%}
+                
+                
+              </div>
+              <button type="submit" class="btn btn-primary mb-5">Submit</button>
+            </fieldset>
+          </form>
+        </div>
+    
+{% endblock %}

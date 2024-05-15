@@ -1,0 +1,48 @@
+
+{% extends 'blog/base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<div class="container-fluid justify-content-center  d-flex  " >
+    <form  class='col col-8 outline-light bg-light justify-content-center  w-80 mx-auto mt-5' action='{% url 'blog:entry' %}' method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <fieldset class='row m-5'>
+        <h2 class="form-heading">Create blog post</h2>
+      <div class="mb-3">
+        <label  class="form-label">topic</label>
+        {% render_field form.topic class="form-control form-control-lg"   placeholder=" Title of post "  aria-label=".form-control-lg example"%}
+       
+      </div>
+
+      <div class="mb-3">
+        <label for="disabledSelect" class="form-label">course</label>
+        {% render_field form.course class="form-control form-control-lg"   placeholder=" Enter course "  aria-label=".form-control-lg example"%}
+        
+        
+      </div>
+      
+      <div class="mb-3">
+        <label for="disabledSelect" class="form-label">code</label>
+        {% render_field form.code class="form-control form-control-lg"   placeholder=" Enter code "  aria-label=".form-control-lg example"%}
+        
+        
+      </div>
+      
+      <div class="mb-3">
+        <label for="disabledSelect" class="form-label">content</label>
+        {% render_field form.content class="form-control form-control-lg"   placeholder=" Enter post content "  aria-label=".form-control-lg example"%}
+        
+        
+      </div>
+      <div class="mb-3">
+        <label for="disabledSelect" class="form-label">image</label>
+        {% render_field form.image class="form-control form-control-lg"   placeholder=" Enter post content "  aria-label=".form-control-lg example"%}
+        
+        
+      </div>
+      <button type="submit" class="btn btn-primary mb-5">Submit</button>
+    </fieldset>
+  </form>
+</div>
+{% endblock %}
+
+

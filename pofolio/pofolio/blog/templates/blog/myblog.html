@@ -1,0 +1,70 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+
+<div class="continue">
+    <div class='row bg-none'>
+   <div class="blog-left-side col col-md-3 col-sm-12 mb-3 ">
+   <div class="topic-cont ">
+    <h2> Table of Contents</h2>
+
+       {% for topic in topics %}   
+       <li>
+        <a href="{% url 'blog:topic_detail' topic.id %}">{{topic.text}}</a></li>
+       {% endfor %}
+
+   </div>
+        </div>
+
+        <div class=" col col-sm-12 col-md-6 blog-main">
+            {% if posts %}
+          {% for post in posts %}
+         
+            <div class="post-head-continue2">
+
+                <h1>{{post.topic}}</h1>
+                <div>
+                    <img  src="{{ post.user.profile_pic.url }}" alt="Profile Picture" class="profile-pictur" style="width: 50px; height:50px ;border-radius:50%" >
+    
+                    <p class="date">{{post.user}}, posted on {{post.post_date|date:'M d, Y H:i'}}</p>
+                </div>
+
+            </div>
+            <hr>
+             <div class="paragraph">
+             <p>{{post.content|safe}}</p>
+             </div>
+            {% if post.code %}
+            <pre>
+                <code class="python" id="code-block">
+            {{post.code|safe}}
+            </code>
+            </pre>
+            {% endif %}
+
+            
+   {% endfor %}
+
+            {% else %}
+            <h2> Coming soon! </h2>
+            {% endif %}
+        </div>
+
+
+        <div class=" col col-xl-3 col-md-3 col-sm-12 blog-right-side fixed-right">
+            <div class="topic-cont">
+                
+          
+          <h2> Recent Posts </h2>
+           {% for post in posts%}
+                <li><a href="{% url 'blog:blogpost_detail' post.id %}">{{post.topic}}</a></li>
+                {% endfor %}
+                <a class='button' href="{% url 'blog:entry' %}" style='margin-top:30px !important'>Create New post</a>
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

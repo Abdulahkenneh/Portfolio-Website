@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">Confirm Unregister</h5>
+                </div>
+                <div class="card-body">
+                
+                    <p>Are you sure you want to unregister from this "<span style='color:blue;font-weight:bold'>{{ course.name }}</span>" course?</p>
+                    <a href="{% url 'blog:unregister_course' course.id %}" class="btn btn-danger">yes,unregister</a>
+                    <a href="{% url 'blog:profile' %}" class="btn btn-secondary">Cancel</a>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
