@@ -1,4 +1,3 @@
-
 import os
 import dj_database_url
 import django_heroku
@@ -64,21 +63,20 @@ WSGI_APPLICATION = 'pofolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),  # Use os.path.join for DB path
     }
 }
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # Use os.path.join for STATIC_ROOT
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Use os.path.join for STATICFILES_DIRS
 
 # Media files (Uploaded files)
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')  # Use os.path.join for MEDIA_ROOT
 
 # Django-Heroku Configuration
 django_heroku.settings(locals())
@@ -98,10 +96,3 @@ TINYMCE_DEFAULT_CONFIG = {
     "custom_undo_redo_levels": 10,
     "language": "en_EN",  # To force a specific language instead of the Django current language.
 }
-
-
-
-
-
-
-
