@@ -1,4 +1,4 @@
-web: gunicorn pofolio.wsgi:application
+web: gunicorn pofolio.wsgi --log-file -
 
 
 
