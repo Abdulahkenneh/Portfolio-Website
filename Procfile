@@ -1,4 +1,4 @@
-web: gunicorn pofolio.wsgi
+web: gunicorn pofolio.wsgi:application
 
 
 
