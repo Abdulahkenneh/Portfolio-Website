@@ -121,10 +121,17 @@ DATABASES = {
 # }
 
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-STATCI_ROOT = os.path.join(BASE_DIR,'staticfiles')
-STATICFILES_DIRS = (os.path.join(BASE_DIR,'static'),)
+# Define static root and directories
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+# Activate Django-Heroku.
 django_heroku.settings(locals())
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
