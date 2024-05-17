@@ -1,0 +1,126 @@
+
+.pofolio{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-items: center;
+    margin-top: 3rem;
+}
+.pofolio-containter{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+     rgba(0, 0, 0, 0.12) 0px -12px 30px,
+     rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px,
+       rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 15px;
+
+
+}
+
+.pofolio-containter h1{
+    margin: 1rem 1rem 0px 1rem;
+    color:white;
+    font-size: 2rem;
+    font-weight:bold;
+
+}
+
+.social-medias{
+    margin:1rem;
+    display: flex;
+
+}
+.social{
+    background-color: white;
+    width:35px;
+    height: 35px;
+    margin:1rem;
+    border-radius: 50px;
+}
+.social:hover{
+    background-color: white;
+    width:40px;
+    height: 35px;
+    transition: all 2s;
+}
+
+.pofolio-containter p{
+    color:white;
+    padding:10px;
+
+}
+
+.pofolio-containter h3{
+    margin:0px 10px 10px 10px;
+    color:rgb(0, 153, 255);
+    font-size:1.7rem;
+    font-weight:bold;;
+    padding:10px;
+
+}
+
+.pofolio-img-cont .style{
+    background-color: aqua;
+    width: 100%;
+    height: 25%;
+    transform:translate(45deg);
+    margin:-2rem 10px;
+    z-index: 2 !important;
+}
+
+.pofolio-img-cont img{
+    z-index: 1;
+    border-radius: 50px 1rem 1rem 50px;
+    background-color:rgba(0, 153, 255, 0.247);
+    width: 80%;
+    margin:2rem 1rem ;
+    float: left;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+
+.bottons{
+    display:flexx
+
+}
+
+
+.bottons .botton1{
+    background-color:  rgb(0, 153, 255);
+    padding:10px;
+    margin-left: 1rem;
+    color:white;
+    text-decoration: none
+}
+
+.bottons .botton2{
+    background-color:  transparent;
+    padding:10px;
+    margin-left: 1rem;
+    border: solid thick rgb(0, 153, 255);
+    color:white ;
+}
+
+.bottons .botton2:hover{
+    background-color: greenyellow;
+    color:black
+}
+
+@media screen and(max-width:780px){
+    .pofolio{
+        display:block;
+        flex-direction: column;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .pofolio-img-cont img{
+        display: none;
+    }
+
+    .pofolio-img-cont img{
+        display: none;
+    }
+}

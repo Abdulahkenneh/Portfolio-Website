@@ -1,0 +1,307 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Rakkas&display=swap');
+
+html{
+  min-height: 100%;
+   position: relative;
+  scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, black,#007aff);
+    margin-bottom: 56px;
+  }
+
+  footer{
+    width:100vw;
+    position:absolute;
+    background:#007aff;
+    bottom:0px;
+    height:56px;
+    transform:translate(-50%,-50%)
+    }
+
+  .navbar {
+    background-color:#007aff;
+    overflow: hidden;
+    margin-right:100px;
+    max-height: 60px;
+    transition: max-height 0.4s;
+    border-radius: 10px;
+    position: fixed;
+    top:10;
+    
+  }
+
+  .logo{
+   
+    margin:15px;
+    color:rgb(64, 211, 199);
+    text-shadow: 2px 7px 5px rgba(173, 169, 169, 0.3), 
+    0px -4px 10px rgba(153, 189, 199, 0.71);
+  }
+  .navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    
+  }
+  .navbar a:hover {
+    background-color: #ddd;
+    color: #333;
+    transition: all 2s;
+  }
+
+  .ham{
+    margin:1rem;
+    width: 35px;
+    height: 35px;
+    background-color: white;
+    display: none;
+    border-radius:10px;
+    position: fixed;
+    
+  
+  }
+  .navbar .icon {
+    display: block;
+    
+  }
+
+  .container{
+    display: flex;
+    justify-content: space-between;
+  }
+  @media screen and (max-width: 600px) {
+    .navbar a:not(:first-child) {
+      display: none;
+    }
+    .navbar a.icon {
+      float: right;
+      display: block;
+   
+    }
+    .container{
+        display:block
+    }
+    .ham{
+        position: absolute;
+        display: block;
+        top:0;
+        right:0
+
+    
+      }
+  }
+  @media screen and (max-width: 715px) {
+    .container{
+        display:block;
+        transition:all 1s;
+       
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .logo{
+        
+        text-align: center;
+        font-size: 1.5rem;
+        color:white;
+        padding-top: 1.5rem;
+        text-decoration: underline;
+    }
+    .navbar.responsive {
+      min-width:50%;
+      position: absolute;
+      max-height: 300px;
+      
+    }
+    .navbar.responsive .icon {
+      position: absolute;
+      right: 0;
+      top: 0;
+    
+    }
+    .navbar.responsive a{
+      float:none;
+      display: block;
+      text-align: left;
+    
+    }
+    .container{
+      height: 15vh;
+      display:block;
+      transition:all 1s;
+      background-color: #007aff;
+      position: sticky;
+      top:0;
+      
+     
+  }
+  }
+
+
+
+
+  /* This is the style for the carld*/
+
+
+  .card-container{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    
+  }
+ 
+  .card-container h2{
+    color:white;
+    background-color:blue;
+    text-align: center;
+    margin:1rem;
+    padding:.5rem;
+    font-size: 1.5rem;
+
+  }
+
+
+  .card-container img{
+    width: 350px;
+    height: 150px;
+  }
+
+  .card-items{
+    margin:10px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  }
+  
+  .card-items:hover{
+    transition: all 2s;
+    transform: translate(40px, 40px) 
+    rotate(0deg) scale(1.4);
+  }
+  .card-container p{
+    width: 350px;
+    height: 20px;
+    color:balck;
+    background-color:white;
+    text-align: center;
+    margin:1rem;
+    padding:.5rem;
+
+  }
+
+  .card-container p:hover{
+    background: black;
+    color:white;
+    box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;
+  }
+  .card-container button{
+    color:white;
+    background-color: blue;
+    text-align: center;
+    margin:1rem;
+    padding:.5rem;
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.home-container{
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+
+}
+
+
+
+  .home-main{
+    margin: 20px;
+    width:60vw;
+    flex-grow: 1;
+    height: 50vh;
+    justify-content: center;
+    justify-items: center;
+    box-shadow:-5px 5px 10px 10px rgba(99, 101, 101, 0.92);
+    top:50%;
+   
+   
+  }
+  
+  .home-side{
+    color:black;
+    background-color: white;
+    border: solid thick black;
+
+
+  }
+
+  .home-side p{
+    color:black;
+    background-color: white;
+    padding:10px
+
+
+  }
+
+  .home-main h1{
+    color:white;
+    padding:1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    margin:1rem;
+  }
+  
+  .home-main p{
+    color:white;
+    padding:1rem;
+    margin:1rem;
+  }
+  
+
+  .home-image{
+    height:50vh;
+    width:100%
+  }
+  
+  .home-button{
+    color:white;
+    background-color: blue;
+  }
+
+   @media screen and (max-width: 780px) {
+    .home-container{
+      display: block;
+     
+    }
+
+    
+    .home-main{
+      margin: 20px 0px 20px 0px;
+      width: auto;
+      height: auto;
+
+    }
+
+   
+    
+  } 
