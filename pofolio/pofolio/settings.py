@@ -125,10 +125,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Define static root and directories
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
-
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),  # Add your static files directory here
+]
 # Activate Django-Heroku.
 django_heroku.settings(locals())
 
